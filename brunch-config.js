@@ -63,6 +63,12 @@ exports.config = {
     }
   },
 
+  conventions: {
+    ignored: [
+      /loudsa/,
+    ],
+  },
+
   npm: {
     enabled: true
   }

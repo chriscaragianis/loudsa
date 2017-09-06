@@ -1,0 +1,4 @@
+[submodule "web/static/loudsa-front"]
+	path = web/static/loudsa-front
+	url = git@github.com:chriscaragianis/loudsa-front.git
+	branch = master
