@@ -25,6 +25,13 @@ defmodule Loudsa.Router do
     get "/calendar", PageController, :index
   end
 
+  scope "/api/v1", Loudsa do
+    pipe_through :api
+
+    get "/posts", PostController, :index
+    get "/swags", SwagController, :index
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Loudsa do
   #   pipe_through :api
