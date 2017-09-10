@@ -17,6 +17,12 @@ defmodule Loudsa.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/swag", PageController, :index
+    get "/news", PageController, :index
+    get "/blog", PageController, :index
+    get "/bylaws", PageController, :index
+    get "/about", PageController, :index
+    get "/calendar", PageController, :index
   end
 
   # Other scopes may use custom stacks.
