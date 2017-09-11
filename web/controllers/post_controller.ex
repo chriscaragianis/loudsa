@@ -3,14 +3,14 @@ defmodule Loudsa.PostController do
   alias Loudsa.Post
 
   def index(conn, _params) do
-    posts = [
-      %Post{
-        id: 1,
-        title: "Post example 1",
-        author: "Example Author",
-        content: "Some <em>nice</em> html content"
-      }
-    ]
+    posts = Repo.all(Post)
+
     json conn, posts
+  end
+
+  def show(conn, %{"id" => id}) do
+    post = Repo.get(Post, String.to_integer(id))
+
+    json conn, post
   end
 end

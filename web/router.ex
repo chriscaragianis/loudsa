@@ -29,6 +29,7 @@ defmodule Loudsa.Router do
     pipe_through :api
 
     get "/posts", PostController, :index
+    get "/posts/:id", PostController, :show
     get "/swags", SwagController, :index
   end
 
