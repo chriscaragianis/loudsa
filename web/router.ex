@@ -11,6 +11,7 @@ defmodule Loudsa.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug CORSPlug, [origin: "http://localhost:3000"]
   end
 
   scope "/", Loudsa do
@@ -31,6 +32,8 @@ defmodule Loudsa.Router do
     get "/posts", PostController, :index
     get "/posts/:id", PostController, :show
     get "/swags", SwagController, :index
+    get "/events", EventController, :index
+    get "/events/:id", EventController, :show
   end
 
   # Other scopes may use custom stacks.
