@@ -19,7 +19,7 @@ config :loudsa, Loudsa.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :argon2_elixir,
-  t_cost: 2
+  t_cost: 2,
   m_cost: 12
 
 
