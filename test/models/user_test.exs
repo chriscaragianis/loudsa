@@ -23,7 +23,7 @@ defmodule Loudsa.UserTest do
     )
   end
 
-  test "registration_changeset, password too short" do
+  test "registration_changeset, password not too short" do
     changeset = User.registration_changeset(%User{}, @valid_attrs)
     assert changeset.changes.password_hash
     assert changeset.valid?
