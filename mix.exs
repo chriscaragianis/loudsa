@@ -30,6 +30,8 @@ defmodule Loudsa.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.3.0-rc"},
      {:cors_plug, "~> 1.2"},
+     {:comeonin, "~> 4.0"},
+     {:argon2_elixir, "~> 1.2"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.2"},
      {:postgrex, ">= 0.0.0"},
