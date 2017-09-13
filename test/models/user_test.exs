@@ -4,6 +4,7 @@ defmodule Loudsa.UserTest do
   alias Loudsa.User
 
   @valid_attrs %{email: "rosa@luxemburg.com", password: "secret"}
+  @invalid_attrs %{email: "rosa@luxemburg.com", password: "ecret"}
 
   test "changeset with valid attributes" do
     changeset = User.changeset(%User{}, @valid_attrs)
@@ -12,7 +13,7 @@ defmodule Loudsa.UserTest do
 
   test "changeset, email too short" do
     changeset = User.changeset(
-      %User{}, Map.put(@valid_attrs, :email, "")
+      %User{}, Map.put(@valid_attrs, :email, "a")
     )
     refute changeset.valid?
   end
@@ -31,7 +32,7 @@ defmodule Loudsa.UserTest do
 
   test "registration_changeset, password too short" do
     changeset = User.registration_changeset(
-      %User{}, Map.put(@valid_attrs, :password, "12345")
+      %User{}, @invalid_attrs
     )
     refute changeset.valid?
   end
