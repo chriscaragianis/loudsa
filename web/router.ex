@@ -34,6 +34,9 @@ defmodule Loudsa.Router do
     get "/swags", SwagController, :index
     get "/events", EventController, :index
     get "/events/:id", EventController, :show
+    post "/users", UserController, :create
+    post "/sessions", SessionController, :create
+    post "/charge", ChargeController, :create
   end
 
   # Other scopes may use custom stacks.
