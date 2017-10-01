@@ -37,6 +37,7 @@ defmodule Loudsa.Router do
     post "/users", UserController, :create
     post "/sessions", SessionController, :create
     post "/charge", ChargeController, :create
+    options "/charge", ChargeController, :options
   end
 
   # Other scopes may use custom stacks.

@@ -26,8 +26,8 @@ defmodule Loudsa.User do
 
   def put_password_hash(changeset) do
     case changeset do
-      %Ecto.Changeset{valid?: true,  changes: %{password: pass}} ->
-        put_change(changeset, :password_hash, Comeonin.Argon2.hashpwsalt(pass))
+      #%Ecto.Changeset{valid?: true,  changes: %{password: pass}} ->
+        #put_change(changeset, :password_hash, Comeonin.Argon2.hashpwsalt(pass))
       _ -> changeset
     end
   end
