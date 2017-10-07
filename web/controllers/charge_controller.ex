@@ -15,12 +15,12 @@ defmodule Loudsa.ChargeController do
       card_nonce: card_nonce,
     })
     HTTPotion.post(
-      "https://connect.squareup.com/v2/locations/#{location_id}/transactions",
+      "https://connect.squareup.com/v2/locations/#{System.get_env("SQUARE_LOCATION")}/transactions",
       [
         body: body,
         headers: [
           "Content-Type": "application-json",
-          "Authorization": "Bearer <TOKEN HERE>"
+          "Authorization": "Bearer #{System.get_env("SQUARE_TOKEN")}"
         ]
       ]
     )
