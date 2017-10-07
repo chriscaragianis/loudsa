@@ -7,7 +7,9 @@ use Mix.Config
 
 # General application configuration
 config :loudsa,
-  ecto_repos: [Loudsa.Repo]
+  ecto_repos: [Loudsa.Repo],
+  mailgun_domain: System.get_env("MAILGUN_DOMAIN")
+  mailgun_key: System.get_env("MAILGUN_KEY")
 
 # Configures the endpoint
 config :loudsa, Loudsa.Endpoint,

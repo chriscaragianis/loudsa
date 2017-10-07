@@ -42,7 +42,8 @@ defmodule Loudsa.Mixfile do
       {:secure_random, "~> 0.2"},
       {:httpotion, "~> 3.0.2"},
       {:distillery, "~> 1.5", runtime: false},
-      {:mix_docker, "~> 0.5.0"}
+      {:mix_docker, "~> 0.5.0"},
+      {:mustache, "~> 0.3.0"}
     ]
   end
 

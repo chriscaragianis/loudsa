@@ -54,9 +54,16 @@ config :logger, level: :info
 # Alternatively, you can configure exactly which server to
 # start per endpoint:
 #
-#     config :loudsa, Loudsa.Endpoint, server: true
+config :loudsa, Loudsa.Endpoint, server: true
 #
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+
+config :loudsa, Loudsa.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("DB_USER")
+  password: System.get_env("DB_PASSWORD")
+  database: System.get_env("DB_NAME")
+  hostname: System.get_env("DB_HOST")
+  pool_size: 10
