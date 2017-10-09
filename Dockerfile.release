@@ -6,7 +6,6 @@ RUN apk update && \
 
 EXPOSE 4000
 ENV PORT=4000 MIX_ENV=prod REPLACE_OS_VARS=true SHELL=/bin/bash
-
 ADD loudsa.tar.gz ./
 RUN chown -R default ./releases
 

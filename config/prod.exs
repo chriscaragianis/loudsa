@@ -59,11 +59,4 @@ config :loudsa, Loudsa.Endpoint, server: true
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-
-config :loudsa, Loudsa.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("DB_USER")
-  password: System.get_env("DB_PASSWORD")
-  database: System.get_env("DB_NAME")
-  hostname: System.get_env("DB_HOST")
-  pool_size: 10
+import_config "prod.secret.exs"

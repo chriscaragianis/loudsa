@@ -25,3 +25,5 @@ erl_crash.dump
 priv
 env
 rel
+*.pem
+*.tar.gz
